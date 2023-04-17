@@ -46,6 +46,17 @@ app.get("/login", function (req, res) {
     res.render("login");
 });
 
+app.get('/logout', function (req, res,) {
+    req.logout(function (err) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect('/');
+        }
+    });
+});
+
+
 app.get("/register", function (req, res) {
     res.render("register");
 });
